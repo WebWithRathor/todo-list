@@ -43,7 +43,7 @@ const App = () => {
                   <feDropShadow dx="0" dy="0" stdDeviation="2" floodColor="lightseagreen" floodOpacity="0.3" />
                 </filter>
                 <circle r="40"  cx='50' cy='50' fill="transparent" stroke="#e0e0e0" strokeWidth="12px"></circle>
-                <circle r="40" cx='50' cy='50' fill="transparent" stroke="lightseagreen" strokeWidth="12px" strokeLinecap="round" strokeDasharray="251.1px" filter="url(#drop-shadow)" strokeDashoffset={`${251.1 * ((100 - (tasks.filter((e) => e.complete).length / tasks.length) * 100) / 100)}px`}></circle>
+                <circle hidden={tasks.length === 0 ? 'hidden':null} r="40" cx='50' cy='50' fill="transparent" stroke="lightseagreen" strokeWidth="12px" strokeLinecap="round" strokeDasharray="251.1px" filter="url(#drop-shadow)" strokeDashoffset={`${251.1 * ((100 - (tasks.filter((e) => e.complete).length / tasks.length) * 100) / 100)}px`}></circle>
               </svg>
               <h1 className='text-2xl font-medium text-white'>{tasks.filter((e) => e.complete).length
               }/{tasks.length}</h1>
