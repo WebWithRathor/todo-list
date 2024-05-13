@@ -1,6 +1,8 @@
 import { React, useState } from 'react'
 import './index.css'
 import { nanoid } from 'nanoid'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 
 const App = () => {
