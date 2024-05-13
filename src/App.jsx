@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React, useRef, useState } from 'react'
 import './index.css'
 import { nanoid } from 'nanoid'
 import gsap from 'gsap'
@@ -25,6 +25,12 @@ const App = () => {
     setTasks(copytask);
     localStorage.setItem('tasks', JSON.stringify(copytask));
   }
+const circle = useRef(null);
+  useGSAP(()=>{
+    gsap.to(circle.current,{
+      strokeDashoffset: 252 * ((100 - (tasks.filter((e) => e.complete === true).length / tasks.length) * 100) / 100) + 'px'
+    })
+  },[tasks])
 
   const deleted = (index) => {
     const copytask = [...tasks];
@@ -45,7 +51,7 @@ const App = () => {
                   <feDropShadow dx="0" dy="0" stdDeviation="2" floodColor="lightseagreen" floodOpacity="0.3" />
                 </filter>
                 <circle r="40"  cx='50' cy='50' fill="transparent" stroke="#e0e0e0" strokeWidth="12px"></circle>
-                <circle hidden={tasks.length === 0 ? 'hidden':null} r="40" cx='50' cy='50' fill="transparent" stroke="lightseagreen" strokeWidth="12px" strokeLinecap="round" strokeDasharray="251.1px" filter="url(#drop-shadow)" strokeDashoffset={`${251.1 * ((100 - (tasks.filter((e) => e.complete).length / tasks.length) * 100) / 100)}px`}></circle>
+                <circle ref={circle} hidden={tasks.length === 0 ? 'hidden':null} r="40" cx='50' cy='50' fill="transparent" stroke="lightseagreen" strokeWidth="12px" strokeLinecap="round" strokeDasharray="252px" filter="url(#drop-shadow)" ></circle>
               </svg>
               <h1 className='text-2xl font-medium text-white'>{tasks.filter((e) => e.complete).length
               }/{tasks.length}</h1>
