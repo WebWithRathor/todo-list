@@ -9,12 +9,12 @@ const App = () => {
 
   return (
     <>
-      <div className="main flex items-center bg-black justify-center h-screen w-full p-10">
-        <div className="left w-1/2 h-full flex flex-col gap-10 items-center justify-center">
+      <div className="main flex sm:flex-row flex-col gap-5 items-center bg-black justify-center h-screen overflow-hidden w-full ">
+        <div className="left sm:pt-0  pt-36 px-5 w-full sm:w-1/2 flex flex-col gap-10 items-center justify-center">
             <Header  />
             <Form />
         </div>
-        <div className="right w-1/3 max-h-[90%] flex flex-col items-center justify-center gap-4">
+        <div className="right w-full px-5 sm:w-1/3 max-h-[90%] flex flex-col items-center justify-center gap-4">
           <Show />
         </div>
 
