@@ -9,8 +9,8 @@ const App = () => {
 
   return (
     <>
-      <div className="main flex sm:flex-row flex-col gap-5 items-center bg-black justify-center h-screen overflow-hidden w-full ">
-        <div className="left sm:pt-0  pt-36 px-5 w-full sm:w-1/2 flex flex-col gap-10 items-center justify-center">
+      <div className="main flex sm:flex-row flex-col gap-5 items-center bg-black justify-center min-h-screen lg:overflow-hidden w-full ">
+        <div className="left lg:relative sticky top-0 bg-black sm:pt-0 pt-10 lg:pt-36 px-5 w-full sm:w-1/2 flex flex-col gap-10 items-center justify-center">
             <Header  />
             <Form />
         </div>

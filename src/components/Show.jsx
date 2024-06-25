@@ -22,9 +22,9 @@ const Show = () => {
 
   return (
     <>
-     <h1 className='text-white w-full text-3xl font-medium mb-4'>Tasks</h1>
+     <h1 className='text-white  mt-10 lg:mt-4 w-full text-3xl font-medium mb-4'>Tasks</h1>
           <div className="tasks w-full text-white">
-            <div className="flex flex-col gap-2 h-[52.5vh] overflow-y-auto py-1">
+            <div className="flex flex-col gap-2 mb-6 lg:h-[52.5vh] lg:overflow-y-auto py-1">
               {tasks.length > 0 ? (
                 tasks.map((e, i) => (
                   <div key={e.id} className="task cursor-pointer flex items-center border rounded-full px-4 py-3 gap-3">

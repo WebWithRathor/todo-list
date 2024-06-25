@@ -16,7 +16,7 @@ const Header = () => {
 
     return (
         <>
-            <div className="head relative w-full sm:w-2/3 h-[35vh] bg-zinc-900 rounded-xl py-6 px-4  flex gap-4 items-center justify-center">
+            <div className="head w-full sm:w-2/3 h-[35vh] bg-zinc-900 rounded-xl py-6 px-4  flex gap-4 items-center justify-center">
                 <h1 className='text-3xl text-white font-medium'>Progress</h1>
                 <div className="progress w-1/2 h-full flex items-center justify-center relative">
                     <svg width="100%" height="100%" className='absolute ' viewBox="0 0 100 100">
